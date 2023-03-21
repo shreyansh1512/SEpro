@@ -69,8 +69,8 @@ $mail->Username = ""; // Enter your email here
 $mail->Password = ""; //Enter your password here
 $mail->Port = 25;
 $mail->IsHTML(true);
-$mail->From = "iit2021193@iiita.ac.in";
-$mail->FromName = "Anurag Singh";
+$mail->From = "";
+$mail->FromName = "";
 $mail->Sender = $fromserver; // indicates ReturnPath header
 $mail->Subject = $subject;
 $mail->Body = $body;
