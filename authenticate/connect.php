@@ -1,6 +1,6 @@
 <?php		
     // connect to the database
-    $host = "";
+    $host = "localhost";
     $user = "";
     $pass = "";
     $dbname = "";

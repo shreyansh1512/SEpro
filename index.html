@@ -1,97 +1,51 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/indexstyle.css"  rel="stylesheet"/>
+    <script src="scripts/script.js"></script>
+    <title>Sign in</title>
+  </head>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+  <body>
+    <div class="main">
+      <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/2e/Indian_Institute_of_Information_Technology%2C_Allahabad_Logo.png" alt="" width="120" height="120" />
+      </div>
 
-    <link rel="stylesheet" href="css/indexstyle.css">
+      <div class="signIn">
+        Sign in 
+      </div>
+      <form name ="login" action="authenticate/authenticate.php" onsubmit="return validateForm()" method="POST">
+      <div class="form">
+        <label for="username">Username or email address</label>
+        <input type="text" name="username" id="username" tabindex="1" />
+        <label for="password">Password
+          <a class="label-link" href="#"> Forgot password? </a>
+        </label>
+        <input type="password" name="password" id="password" tabindex="1" />
+        <p style="color:red;" id="test"></p>
+        <input
+          type="submit"
+          name="commit"
+          value="Sign In"
+          tabindex="3"
+          class="lastInput"
+        />
+      </div>
+      </form>
+      <div class="login-callout">
+          New User? <a href="register/verify/verify.html">Create an account.</a>
+      </div>
 
-    <link rel="icon" href="Favicon.png">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-    <title>PortFolio</title>
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-        <a class="navbar-brand" >Portfolio</a>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="user/signup.html">Register</a>
-                </li>
-            </ul>
-
-        </div>
+      <div class="footer">
+          <ul>
+              <li><a href="">Terms</a></li>
+              <li><a href="">Privacy</a></li>
+              <li><a href="">Security</a></li>
+          </ul>
+      </div>
     </div>
-</nav>
-
-<main class="login-form">
-    <div class="cotainer">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">Login</div>
-                    <div class="card-body">
-                        <form action="authenticate/authenticate.php" method="POST">
-                            <div class="form-group row">
-                                <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
-                                <div class="col-md-6">
-                                    <input type="text" id="username" class="form-control" name="username" required autofocus>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" id="password" class="form-control" name="password" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Remember Me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-                            </div>
-                            <div class="col-md-4 offset-md-4">
-                                <a href="user/forgot.html" class="btn btn-link">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-</main>
-
-
-</body>
+  </body>
 </html>

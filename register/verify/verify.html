@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="verify.css"  rel="stylesheet"/>
+    <script src="verify.js"></script>
+    <title>Verify Email</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/2e/Indian_Institute_of_Information_Technology%2C_Allahabad_Logo.png" alt="" width="120" height="120" />
+      </div>
+        
+      <div class="verify">
+        Enter your email address 
+      </div>
+            <div class="form">
+        <label for="email">Email address</label>
+        <input type="text" name="email" id="email" placeholder=" enrollment-id@iiita.ac.in" tabindex="1" />
+        
+        <p style="color:red;" id="test" hidden></p>
+        <input
+          type="submit"
+          onclick="validateEmail(document.getElementById('email').value)"
+          id="button"
+          name="commit"
+          value="Submit"
+          tabindex="3"
+          class="lastInput"
+        />
+      </div>
+            
+      
+    </div>
+  </body>
+</html>

@@ -1,17 +1,10 @@
 <?php
-session_start();
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-require '../phpmailer/vendor/phpmailer/phpmailer/src/Exception.php';
-require '../phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require '../phpmailer/vendor/phpmailer/phpmailer/src/SMTP.php';
-
+require 'phpmailer/vendor/autoload.php';
 require('connect.php');
 
 $username = $_POST['username'];
-$_SESSION['username'] = $username;
 $sql = "SELECT * FROM logindetails WHERE username = '$username'";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
@@ -21,6 +14,7 @@ $row = mysqli_fetch_assoc($result);
    else{
       $emailnow = $row['email'];
       $namenow = $row['firstName'];
+
       $mail = new PHPMailer();
       $mail->IsSMTP();
       $mail->Mailer = "smtp";
