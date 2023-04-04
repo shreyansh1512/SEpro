@@ -6,7 +6,7 @@ if(!isset($_SESSION['loggedIn']) && !$_SESSION['loggedIn']){
 ?>
 
 <?php 
-require ('../authenticate/connect.php');
+require ('../../authenticate/connect.php');
 $name = $_SESSION['displayname'];
 ?>
 
@@ -16,31 +16,23 @@ $name = $_SESSION['displayname'];
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Student Dashboard</title>
+    <title>Edit Profile</title>
 
     <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="userProfilecss">
+    <link rel="stylesheet" href="editProfilecss">
   </head>
   <body>
     <div class="grid-container">
 
       <!-- Header -->
       <header class="header">
-        <div class="header-left">
-          <span class="material-icons-outlined">search</span>
-        </div>
-        
-        <div class="search-bar">
-        <input type="text" placeholder="Search...">
-        <span class="material-icons-outlined close-icon">close</span>
-        </div>
-        
+        <h2> Edit Profile </h2>       
         <div class="header-right">
           <div class="profile-icon">
             <span class="material-icons-outlined">account_circle</span>
@@ -62,7 +54,38 @@ $name = $_SESSION['displayname'];
       <main class="main-container">
 
         <div class="main-title">
-          <h2>Welcome <?php echo $_SESSION['displayname']; ?></h2>
+        
+        <div class="charts">
+          <div class="charts-card">
+          <div class="form">
+              
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" tabindex="1" value="<?php echo $_SESSION['displayname']; ?>" />
+        <span style="color:red;" id="name-error"></span><br>      
+
+        <label for="password">New Password</label>
+        <input type="password" name="password" id="password" tabindex="1" />
+        <span style="color:red;" id="password-error"></span><br>
+
+        <label for="check_password">Confirm Password</label>
+        <input type="password" name="check_password" id="check_password" tabindex="1" />
+        <span style="color:red;" id="confirm-error"></span><br>             
+
+        <p style="color:red;" id="test" hidden></p>
+        <input
+          type="submit"
+          id="button"
+          name="commit"
+          value="Edit"
+          tabindex="3"
+          onclick="validateForm(document.getElementById('name').value, document.getElementById('password').value, document.getElementById('check_password').value)"
+          class="lastInput"
+        />
+</div>
+</div>
+</div>
+
+
         </div>
 
       </main>
@@ -74,6 +97,6 @@ $name = $_SESSION['displayname'];
     <!-- ApexCharts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
     <!-- Custom JS -->
-    <script src="userProfilejs"></script>
+    <script src="editProfilejs"></script>
   </body>
 </html>

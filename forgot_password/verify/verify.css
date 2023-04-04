@@ -392,13 +392,13 @@ td {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif ;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   background-color: #ffffff;
   font-size: 14px;
   line-height: 1;
 }
 
-.header, .signUp {
+.header, .verify {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -406,7 +406,7 @@ body {
   padding-bottom: 17px;
 }
 
-.signUp {
+.verify {
   margin-top: 2px;
   color: #333;
   margin-bottom: 1px;
@@ -418,7 +418,7 @@ body {
 .form {
   margin: auto;
   width: 308px;
-  height: 380px;
+  height: 185px;
   background-color: #f6f8fa;
   font-size: 14px;
   border: 1px solid #d8dee2;
@@ -442,7 +442,6 @@ body {
   height: 30px;
   margin-top: 8px;
   margin-bottom: 15px;
-  padding-left: 8px;
   border: 1px solid #e1e4e8;
   border-radius: 6px;
   -webkit-border-radius: 6px;

@@ -1,2 +1,19 @@
 RewriteEngine On
-RewriteRule ^userProfile$ user/profile.php [NC] 
+
+RewriteRule ^userProfile$ user/profile.php [NC]
+RewriteRule ^userProfilecss$ user/profile.css [NC]
+RewriteRule ^userProfilejs$ user/profile.js [NC]
+
+RewriteRule ^editProfile$ user/editprofile/editprofile.php [NC]
+RewriteRule ^editProfilecss$ user/editprofile/edit.css [NC]
+RewriteRule ^editProfilejs$ user/editprofile/edit.js [NC]
+RewriteRule ^editProfilesave$ user/editprofile/save.php [NC]
+
+RewriteRule ^portfolio$ user/portfolio/portfolio.php [NC]
+RewriteRule ^portfoliocss$ user/portfolio/portfolio.css [NC]
+RewriteRule ^portfoliojs$ user/portfolio/portfolio.js [NC]
+RewriteRule ^build$ user/portfolio/build.php [NC]
+RewriteRule ^save$ user/portfolio/save.php [NC]
+
+
+RewriteRule ^adminProfile$ admin/profile.php [NC] 

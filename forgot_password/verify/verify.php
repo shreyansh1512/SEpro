@@ -34,9 +34,9 @@ function send_link($email){
    $verification_token = $verification_token . $addKey;
 
   $email_template = "
-  <h5>Verify you email to register for Portfolio with the link given below</h5>
+  <h5>This is your reset password link.</h5>
   <br>
-  <a href='http://localhost/register/signup/signup.php?token=$verification_token&email=$email'>Verify Link</a>
+  <a href='http://localhost/forgot_password/reset/reset.php?token=$verification_token&email=$email'>Verify Link</a>
   <h5>DO NOT SHARE THIS LINK WITH ANYONE</h5>
 ";
 
@@ -47,7 +47,7 @@ function send_link($email){
 
   }else{
 
-    $add_user = "INSERT INTO registration (`email` , `token`, `expiryDate`) VALUES ('$email', '$verification_token', '$expDate')";
+    $add_user = "INSERT INTO forgot VALUES ('$email', '$verification_token', '$expDate')";
     if($conn->query($add_user)){
       echo "Verification link sent!!";
     }else {
@@ -60,8 +60,8 @@ function send_link($email){
 $check_student = "SELECT * FROM logindetails WHERE username = '$enroll' ";
 $result = $conn->query($check_student);
 
-if($result->num_rows > 0){
-  echo "User already exists!!";
+if($result->num_rows === 0){
+  echo "User doesn't exists!!";
 }
 else{
   send_link($email);

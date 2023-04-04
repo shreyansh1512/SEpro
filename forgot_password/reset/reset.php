@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require('../../authenticate/connect.php');
 
@@ -6,19 +7,19 @@ $email = $_GET['email'];
 $token = $_GET['token'];
 $currentDate = date("Y-m-d H:i:s");
 
-$check_token = "SELECT * FROM registration WHERE email = '$email' AND token = '$token' ";
+$check_token = "SELECT * FROM forgot WHERE email = '$email' AND token = '$token' ";
 $result = $conn->query($check_token);
 
 ?>
 
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="signup.css"  rel="stylesheet"/>
-    <script src="signup.js"></script>
-    <title>Verify Email</title>
+    <link href="reset.css"  rel="stylesheet"/>
+    <script src="reset.js"></script>
+    <title>Reset Password</title>
   </head>
 
 <?php 
@@ -26,12 +27,7 @@ $result = $conn->query($check_token);
 if($result->num_rows === 1){
     $row = $result->fetch_assoc();
     if($row['expiryDate'] >= $currentDate ){
-
-      $username = substr($email, 0, 10);
-      $department = substr($username, 1, 2);
-      $_SESSION['dept']=$department;
-      $_SESSION['username']=$username;
-      $_SESSION['email']=$email;
+      $_SESSION['email'] = $email;
 ?>
 
  
@@ -42,26 +38,18 @@ if($result->num_rows === 1){
       </div>
         
       <div class="signUp">
-        Register 
+        Reset Password 
       </div>
-    <form action="save.php" method="POST" onsubmit="return validateForm()" name="signup">
+    <form action="save.php" method="GET" name = "reset" onsubmit="return validateForm()">
       <div class="form">
               
-        <label for="name">Full Name</label>
-        <input type="text" name="name" id="name" placeholder=" Full Name" tabindex="1" />
-        <span style="color:red;" id="name-error"></span><br>
-        
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" tabindex="1" value="<?php echo $username; ?>" disabled/>
-      
-      
-        <label for="password">Password</label>
+        <label for="password">New Password</label>
         <input type="password" name="password" id="password" tabindex="1" />
         <span style="color:red;" id="password-error"></span><br>
 
         <label for="check_password">Confirm Password</label>
         <input type="password" name="check_password" id="check_password" tabindex="1" />
-        <span style="color:red;" id="confirm-error"></span><br>             
+        <span style="color:red;" id="confirm-error"></span><br>
 
         <p style="color:red;" id="test" hidden></p>
         <input
