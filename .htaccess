@@ -1,5 +1,6 @@
 RewriteEngine On
 
+
 RewriteRule ^userProfile$ user/profile.php [NC]
 RewriteRule ^userProfilecss$ user/profile.css [NC]
 RewriteRule ^userProfilejs$ user/profile.js [NC]
@@ -9,11 +10,13 @@ RewriteRule ^editProfilecss$ user/editprofile/edit.css [NC]
 RewriteRule ^editProfilejs$ user/editprofile/edit.js [NC]
 RewriteRule ^editProfilesave$ user/editprofile/save.php [NC]
 
-RewriteRule ^portfolio$ user/portfolio/portfolio.php [NC]
-RewriteRule ^portfoliocss$ user/portfolio/portfolio.css [NC]
-RewriteRule ^portfoliojs$ user/portfolio/portfolio.js [NC]
-RewriteRule ^build$ user/portfolio/build.php [NC]
-RewriteRule ^save$ user/portfolio/save.php [NC]
-
+RewriteRule ^portfolio$ user/portfolio.php [NC]
+RewriteRule ^portfoliocss$ user/portfolio.css [NC]
+RewriteRule ^portfoliojs$ user/portfolio.js [NC]
+RewriteRule ^build$ user/build/build.php [NC]
+RewriteRule ^save$ user/build/save.php [NC]
+RewriteRule ^buildcss$ user/build/build.css [NC]
+RewriteRule ^search$ user/search/search.php [NC]
+RewriteRule ^showsearch$ user/search/show.php [NC]
 
 RewriteRule ^adminProfile$ admin/profile.php [NC] 

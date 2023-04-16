@@ -7,7 +7,8 @@ if(!isset($_SESSION['loggedIn']) && !$_SESSION['loggedIn']){
 
 <?php 
 require ('../../authenticate/connect.php');
-$username = $_SESSION['username']; 
+$username = $_POST['search']; 
+
 
 $sql = "SELECT * FROM about WHERE username = '$username'";
 $result = $conn->query($sql);
@@ -18,6 +19,10 @@ $sql1 = "SELECT * FROM project WHERE username = '$username'";
 $result1 = $conn->query($sql1);
 $row1 = mysqli_fetch_assoc($result1);
 
+$sql2 = "SELECT * FROM logindetails WHERE username = '$username'";
+$result2 = $conn->query($sql2);
+$row2 = mysqli_fetch_assoc($result2);
+
 ?>
 
 
@@ -27,7 +32,6 @@ $row1 = mysqli_fetch_assoc($result1);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Student Portfolio</title>
-
     <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Material Icons -->
@@ -41,7 +45,21 @@ $row1 = mysqli_fetch_assoc($result1);
 
       <!-- Header -->
       <header class="header">
-            <h2> Portfolio </h2>    
+        <h2> Portfolio </h2>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        
+        <div class="search-bar">
+        <form action="showsearch" method="POST">
+        <input type="text" id="search" placeholder="Search..." autocomplete="off">
+        <span class="material-icons-outlined close-icon">close</span>
+        </form>
+
+        <div id="results"></div> 
+        </div>    
+        
+        
         <div class="header-right">
           <div class="profile-icon">
             <span class="material-icons-outlined">account_circle</span>
@@ -65,14 +83,18 @@ $row1 = mysqli_fetch_assoc($result1);
           <?php 
             if(mysqli_num_rows($result)===0 && mysqli_num_rows($result1)===0){
           ?>
-            <h2> Build Your Portfolio </h2>
+          <div class="start">
+            <h1>The user has not created a portfolio yet</h1>
+          </div>
           <?php } ?>  
-          
-         <div class="charts">
 
+                  
         <?php 
           if(mysqli_num_rows($result)===1){
         ?>
+          <h2> <?php echo $row2['name']; ?>'s Portfolio  </h2>        
+          <div class="charts">
+
           <div class="charts-card">
             <h2> Personal Information </h2>
 
@@ -120,6 +142,7 @@ $row1 = mysqli_fetch_assoc($result1);
     <!-- Scripts -->
     <!-- ApexCharts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Custom JS -->
     <script src="portfoliojs"></script>
   </body>

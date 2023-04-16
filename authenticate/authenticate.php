@@ -18,15 +18,16 @@ session_start();
         $role = $row['role'];
         
         if($role === 'student'){
-            header("Location:../userProfile");
+            echo 'student';
             exit();
         }
         else{
-            header("Location:../admin/profile.php");
+            echo 'admin';
             exit();
         }
     }
 	else{
-       	
+        echo "Wrong Credentials.";
 	}
 ?>
+

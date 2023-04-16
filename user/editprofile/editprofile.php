@@ -62,6 +62,11 @@ $name = $_SESSION['displayname'];
         <label for="name">Full Name</label>
         <input type="text" name="name" id="name" tabindex="1" value="<?php echo $_SESSION['displayname']; ?>" />
         <span style="color:red;" id="name-error"></span><br>      
+        
+        <label for="curpass">Current Password</label>
+        <input type="password" name="curpass" id="curpass" tabindex="1" />
+        <span style="color:red;" id="password-error"></span><br>
+
 
         <label for="password">New Password</label>
         <input type="password" name="password" id="password" tabindex="1" />
@@ -78,7 +83,7 @@ $name = $_SESSION['displayname'];
           name="commit"
           value="Edit"
           tabindex="3"
-          onclick="validateForm(document.getElementById('name').value, document.getElementById('password').value, document.getElementById('check_password').value)"
+          onclick="validateForm(document.getElementById('name').value, document.getElementById('password').value, document.getElementById('check_password').value, document.getElementById('curpass').value)"
           class="lastInput"
         />
 </div>

@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/indexstyle.css"  rel="stylesheet"/>
+    
     <script src="scripts/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>Sign in</title>
   </head>
 
@@ -17,24 +21,30 @@
       <div class="signIn">
         Sign in 
       </div>
-      <form name ="login" action="authenticate/authenticate.php" onsubmit="return validateForm()" method="POST">
       <div class="form">
-        <label for="username">Username or email address</label>
+        
+        <label for="">Username or email address</label>
         <input type="text" name="username" id="username" tabindex="1" />
-        <label for="password">Password
+        
+        <label for="">Password
           <a class="label-link" href="forgot_password/verify/verify.html"> Forgot password? </a>
         </label>
         <input type="password" name="password" id="password" tabindex="1" />
+        
         <p style="color:red;" id="test"></p>
+        
         <input
           type="submit"
+          id="button"
           name="commit"
           value="Sign In"
           tabindex="3"
+          onclick="validateForm()"
           class="lastInput"
         />
+
       </div>
-      </form>
+
       <div class="login-callout">
           New User? <a href="register/verify/verify.html">Create an account.</a>
       </div>

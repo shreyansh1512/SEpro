@@ -5,7 +5,7 @@ profileIcon.addEventListener('click', () => {
   dropdownMenu.classList.toggle('active');
 });
 
-function validateForm(name, pass, confirmpass ) {
+function validateForm(name, pass, confirmpass, curpass) {
 
 
   const uppercaseRegex = /[A-Z]/;
@@ -26,7 +26,7 @@ function validateForm(name, pass, confirmpass ) {
       numberRegex.test(pass) && pass.length >= 8){
 
     if(pass===confirmpass){      
-      sendData(name, pass);
+      sendData(name, pass, curpass);
       return true;
     }
     else{
@@ -40,13 +40,14 @@ function validateForm(name, pass, confirmpass ) {
   }
 }
 
-function sendData(name, pass) {
+function sendData(name, pass, curpass) {
     $.ajax({
         type: "POST",
         url: "editProfilesave",
         data: { 
-            name: name,
-            pass: pass
+            pass: pass,
+            curpass: curpass,
+            name:name
         },
         success: function(response) {
             $('#confirm-error').html(response);

@@ -123,14 +123,12 @@ body {
 }
 
 .charts-card {
-  background-color: #f7f7f8;
-  margin-bottom: 20px;
+   margin-bottom: 20px;
   padding: 20px;
   box-sizing: border-box;
   -webkit-column-break-inside: avoid;
   border-radius: 5px;
-  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
-}
+  }
 
 .chart-title {
   display: flex;
