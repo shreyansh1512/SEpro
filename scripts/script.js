@@ -39,7 +39,7 @@ function sendData(username, password) {
             window.location.href = '../portfolio';
           }
           else if(response=='admin'){
-             window.location.href = '../admin';
+             window.location.href = '../adminDash';
           }
           else{
             $('#test').html(response);

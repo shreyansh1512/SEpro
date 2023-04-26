@@ -51,7 +51,6 @@ $result = $conn->query($sql);
         <input type="text" id="search" name="search" placeholder="Search..." autocomplete="off">
         <span class="material-icons-outlined close-icon">close</span>
         </form>
-
         <div id="results"></div> 
         </div>    
         
@@ -62,7 +61,6 @@ $result = $conn->query($sql);
           <div class="dropdown-menu">
             <ul>
               <li><a href="build">Build</a></li>
-              <li><a href="#">Settings</a></li>
               <li><a href="editProfile">Edit profile</a></li>
               <li><a href="user/logout.php">Logout</a></li>
             </ul>

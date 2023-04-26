@@ -38,7 +38,6 @@ $username = $_SESSION['username'];
           <div class="dropdown-menu">
             <ul>
               <li><a href="portfolio">Portfolio</a></li>
-              <li><a href="#">Settings</a></li>
               <li><a href="editProfile">Edit profile</a></li>
               <li><a href="user/logout.php">Logout</a></li>
             </ul>
@@ -57,7 +56,7 @@ $username = $_SESSION['username'];
           <div class="charts-card">
             <h2> Personal Information </h2>
 
-            <label for="">About</label><br>
+            <label for="">About</label><br><br>
           <?php 
             $sql = "SELECT * FROM about WHERE username = '$username'";
             $result = $conn->query($sql);
@@ -89,8 +88,8 @@ $username = $_SESSION['username'];
                 foreach ($rows as $row) {
           ?>
             
-          <input type="text" id=<?php echo $row['serial#'] ?> rows="3" class=" form-control sField" value = <?php echo $row['skill'] ?>></input>
-
+          <input type="text" id=<?php echo $row['serial#'] ?> rows="3" class=" form-control sField" value = "<?php echo $row['skill'] ?>"></input>
+          <?php if($row['serial#']=== 'tech3'){ ?> <br><br> <?php } ?>
           <?php }
             }     
           ?>
@@ -117,8 +116,8 @@ $username = $_SESSION['username'];
                 foreach ($rows as $row) {
           ?>
             
-          <input type="text" id=<?php echo $row['serial#'] ?> rows="3" class=" form-control sField" value = <?php echo $row['skill'] ?>></input>
-
+          <input type="text" id=<?php echo $row['serial#'] ?> rows="3" class=" form-control sField" value = "<?php echo $row['skill'] ?>"></input>
+          <?php if($row['serial#']=== 'Ntech3'){ ?> <br><br> <?php } ?>
           <?php }
             }     
           ?>
@@ -163,11 +162,11 @@ $username = $_SESSION['username'];
 
             <h3> Project <?php echo $row['serial#'] ?> </h3>
             <label for="">Project Name</label><br>
-            <input type="text" id="pron<?php echo $row['serial#'] ?>" rows="3" value=<?php echo $row['pron'] ?>></input><br><br>
+            <input type="text" id="pron<?php echo $row['serial#'] ?>" rows="3" value="<?php echo $row['pron'] ?>"></input><br><br>
             <label for="" >Project description</label><br>
             <textarea id="prod<?php echo $row['serial#'] ?>" type="text" placeholder=" Enter here" rows="3" ><?php echo $row['prod'] ?></textarea><br>
             <label for="">Project Link</label><br>
-            <input type="text" id="prol<?php echo $row['serial#'] ?>" value=<?php echo $row['pron'] ?> rows="3" ></input><br>          
+            <input type="text" id="prol<?php echo $row['serial#'] ?>" value="<?php echo $row['pron'] ?>" rows="3" ></input><br>          
 
           <?php 
            }

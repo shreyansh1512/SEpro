@@ -50,40 +50,6 @@ body {
   cursor: pointer;
 }
 
-.search-bar {
-  position: absolute;
-  top: 15px;
-  right: 100px;
-  display: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.search-bar.active {
-  display: block;
-}
-
-.search-bar input {
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        font-size: 16px;
-        width: 200px;
-      }
-
-      .search-bar .close-icon {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        cursor: pointer;
-        font-size: 24px;
-        color: #999;
-      }
-
-      .search-bar .close-icon:hover {
-        color: #333;
-      }
 
 .menu-icon {
   display: none;
@@ -176,22 +142,73 @@ body {
 }
 
 
-.lastInput {
-  background-color: #0366d6;
-  color: white;
-  height: 35px;
-  text-align: center;
-  border: 1px solid;
-  padding: 5px 16px;
-  font-weight: 650;
-  border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
-}                                  
+
+      .search{
+       top: 50%;
+       left: 25%;
+       width: 790px;
+       position: absolute;
+        background-color: #e2e8f0; 
+       }
+
+       .search input{
+          height: 60px;
+          width: 670px;
+          text-indent: 25px;
+          border: 2px solid #d6d4d4;
+          font-size: medium;
+          border-radius: 15px 0px 0px 15px; 
+        }
 
 
+       .search input:focus{
+        box-shadow: none;
+        border: 2px solid #0366d6;
+        font-size: medium;
+       }
+
+       .search .fa-search{
+
+        position: absolute;
+        top: 1000px;
+        left: 16px;
+
+       }
+
+       .search button{
+          position: absolute;
+          top: 2px;
+          right: 3px;
+          height: 62px;
+          width: 110px;
+          color: #fff;
+          background: #1d2f49;
+          border: none;
+          cursor: pointer;
+          font-size: medium;
+          border-radius: 0px 15px 15px 0px; 
+        }
+
+        .deleteuser{
+          position: relative;
+          left: 750px;
+          background-color: #ce2020;
+          color: white;
+          border-radius: 5px;
+        }
+        .deleteuser2{
+          position: absolute;
+          right:10px;
+          background-color: #ce2020;
+          color: white;
+          border-radius: 5px;
+        }
+
+
+        .start {
+          padding: 70px 0;
+          text-align: center;
+        }
 
 
 /* ---------- MEDIA QUERIES ---------- */

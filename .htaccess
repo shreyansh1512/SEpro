@@ -1,10 +1,5 @@
 RewriteEngine On
 
-
-RewriteRule ^userProfile$ user/profile.php [NC]
-RewriteRule ^userProfilecss$ user/profile.css [NC]
-RewriteRule ^userProfilejs$ user/profile.js [NC]
-
 RewriteRule ^editProfile$ user/editprofile/editprofile.php [NC]
 RewriteRule ^editProfilecss$ user/editprofile/edit.css [NC]
 RewriteRule ^editProfilejs$ user/editprofile/edit.js [NC]
@@ -19,4 +14,11 @@ RewriteRule ^buildcss$ user/build/build.css [NC]
 RewriteRule ^search$ user/search/search.php [NC]
 RewriteRule ^showsearch$ user/search/show.php [NC]
 
-RewriteRule ^adminProfile$ admin/profile.php [NC] 
+RewriteRule ^adminDash$ admin/dashboard/dashboard.php [NC] 
+RewriteRule ^dashjs$ admin/dashboard/dashboard.js [NC] 
+RewriteRule ^dashcss$ admin/dashboard/dashboard.css [NC] 
+
+RewriteRule ^adminshowsearch$ admin/searched/showsearch.php [NC] 
+
+RewriteRule ^userdelete$ admin/delete/delete.php [NC] 
+

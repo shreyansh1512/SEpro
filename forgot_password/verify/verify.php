@@ -18,8 +18,8 @@ function send_link($email){
   $mail->SMTPAuth = true;
   $mail->Username = '';
   $mail->Password = '';
-  $mail->setFrom('iit2021087@iiita.ac.in', 'Shreyansh Jain');
-  $mail->addReplyTo('iit2021087@iiita.ac.in', 'Shreyansh Jain');
+  $mail->setFrom('', 'Shreyansh Jain');
+  $mail->addReplyTo('', 'Shreyansh Jain');
   $mail->addAddress($email);
   $mail->isHTML(true);
 
