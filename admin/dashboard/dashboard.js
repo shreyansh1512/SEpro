@@ -43,4 +43,54 @@ function deleteuser(){
     
 }
 
+function validate(curr,newpass,confpass){
+ 
+  document.getElementById('curr-error').innerHTML = ' ';
+  document.getElementById('password-error').innerHTML = ' ';
+  document.getElementById('confirm-error').innerHTML = ' ';
+
+  if(curr.length == 0){
+    document.getElementById('curr-error').innerHTML = 'Enter Current Passwords.';
+    return false;
+  }
+
+  const uppercaseRegex = /[A-Z]/;
+  const lowercaseRegex = /[a-z]/;
+  const numberRegex = /[0-9]/;
+  const symbolRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
+  
+  if(uppercaseRegex.test(newpass) && lowercaseRegex.test(newpass) && symbolRegex.test(newpass) &&
+      numberRegex.test(newpass) && newpass.length >= 8){
+
+    if(newpass===confpass){      
+      sendpass(curr, newpass);
+      return true;
+    }
+    else{
+      document.getElementById('confirm-error').innerHTML = 'Passwords do not match.';
+      return false;
+    }
+  }
+  else{
+    document.getElementById('password-error').innerHTML = 'Password not strong enough';
+    return false;
+  }
+
+}
+
+
+function sendpass(curr, newpass) {
+    $.ajax({
+        type: "POST",
+        url: "PasswordChange",
+        data: { 
+            curr: curr,
+            newpass: newpass
+        },
+        success: function(response) {
+            $('#confirm-error').html(response);
+        }
+    });
+}
+
 

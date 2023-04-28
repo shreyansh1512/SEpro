@@ -69,13 +69,13 @@ body {
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         font-size: 16px;
-        width: 200px;
+        width: 250px;
       }
 
       .search-bar .close-icon {
-        position: absolute;
-        top: 50%;
-        right: 10px;
+        position: fixed;
+        top: 37px;
+        right: 105px;
         transform: translateY(-50%);
         cursor: pointer;
         font-size: 24px;

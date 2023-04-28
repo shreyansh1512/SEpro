@@ -4,6 +4,8 @@ RewriteRule ^editProfile$ user/editprofile/editprofile.php [NC]
 RewriteRule ^editProfilecss$ user/editprofile/edit.css [NC]
 RewriteRule ^editProfilejs$ user/editprofile/edit.js [NC]
 RewriteRule ^editProfilesave$ user/editprofile/save.php [NC]
+RewriteRule ^PasswordChange$ user/editprofile/changepassword.php [NC]
+
 
 RewriteRule ^portfolio$ user/portfolio.php [NC]
 RewriteRule ^portfoliocss$ user/portfolio.css [NC]
@@ -14,6 +16,10 @@ RewriteRule ^buildcss$ user/build/build.css [NC]
 RewriteRule ^search$ user/search/search.php [NC]
 RewriteRule ^showsearch$ user/search/show.php [NC]
 
+
+
+
+
 RewriteRule ^adminDash$ admin/dashboard/dashboard.php [NC] 
 RewriteRule ^dashjs$ admin/dashboard/dashboard.js [NC] 
 RewriteRule ^dashcss$ admin/dashboard/dashboard.css [NC] 
@@ -22,3 +28,5 @@ RewriteRule ^adminshowsearch$ admin/searched/showsearch.php [NC]
 
 RewriteRule ^userdelete$ admin/delete/delete.php [NC] 
 
+RewriteRule ^changepass$ admin/changePassword/changepassword.php [NC] 
+RewriteRule ^sendPass$ admin/changePassword/save.php [NC] 

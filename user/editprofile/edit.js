@@ -5,7 +5,8 @@ profileIcon.addEventListener('click', () => {
   dropdownMenu.classList.toggle('active');
 });
 
-function validateForm(name, pass, confirmpass, curpass) {
+
+function ChangePass(curr,newpass,confpass) {
 
 
   const uppercaseRegex = /[A-Z]/;
@@ -13,44 +14,71 @@ function validateForm(name, pass, confirmpass, curpass) {
   const numberRegex = /[0-9]/;
   const symbolRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
   
+  if(uppercaseRegex.test(newpass) && lowercaseRegex.test(newpass) && symbolRegex.test(newpass) &&
+      numberRegex.test(newpass) && newpass.length >= 8){
+
+    if(newpass===confpass){      
+      sendpass(curr, newpass);
+      return true;
+    }
+    else{
+      document.getElementById('passpro').innerHTML = 'Passwords do not match.';
+      return false;
+    }
+  }
+  else{
+    document.getElementById('passpro').innerHTML = 'Password not strong enough';
+    return false;
+  }
+}
+
+
+
+function sendpass(curr, newpass) {
+    $.ajax({
+        type: "POST",
+        url: "PasswordChange",
+        data: { 
+            curr: curr,
+            newpass: newpass
+        },
+        success: function(response) {
+            $('#passpro').html(response);
+        }
+    });
+}
+
+
+
+function ChangeInfo(name,git,insta,twit,face,Hskill,Hhandle) {
+
  
   if(name.length===0){
     document.getElementById('name-error').innerHTML = 'Enter your name.';
     return false;
   }
   else{
-    document.getElementById('name-error').innerHTML = '';
+    sendData(name,git,insta,twit,face,Hskill,Hhandle);
   }
 
-  if(uppercaseRegex.test(pass) && lowercaseRegex.test(pass) && symbolRegex.test(pass) &&
-      numberRegex.test(pass) && pass.length >= 8){
-
-    if(pass===confirmpass){      
-      sendData(name, pass, curpass);
-      return true;
-    }
-    else{
-      document.getElementById('confirm-error').innerHTML = 'Passwords do not match.';
-      return false;
-    }
-  }
-  else{
-    document.getElementById('password-error').innerHTML = 'Password not strong enough';
-    return false;
-  }
 }
 
-function sendData(name, pass, curpass) {
+
+function sendData(name,git,insta,twit,face,Hskill,Hhandle) {
     $.ajax({
         type: "POST",
         url: "editProfilesave",
         data: { 
-            pass: pass,
-            curpass: curpass,
-            name:name
+          name:name,
+          git: git,
+          insta: insta,
+          twit: twit,
+          face: face,
+          Hskill: Hskill,
+          Hhandle: Hhandle
         },
         success: function(response) {
-            $('#confirm-error').html(response);
+            $('#detailpro').html(response);
         }
     });
 }
