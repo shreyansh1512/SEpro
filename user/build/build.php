@@ -81,15 +81,15 @@ $username = $_SESSION['username'];
           ?>
             <input type="text" id="tech1" placeholder=" Skill 1" rows="3" class=" form-control sField"></input>
             <input type="text" id="tech2" placeholder=" Skill 2" rows="3" class=" form-control sField"></input>
-            <input type="text" id="tech3" placeholder=" Skill 3" rows="3" class=" form-control sField"></input><br><br>
+            <input type="text" id="tech3" placeholder=" Skill 3" rows="3" class=" form-control sField"></input><br>
             <input type="text" id="tech4" placeholder=" Skill 4" rows="3" class=" form-control sField"></input>
             <input type="text" id="tech5" placeholder=" Skill 5" rows="3" class=" form-control sField"></input>
           <?php }else{ 
                 foreach ($rows as $row) {
           ?>
             
-          <input type="text" id=<?php echo $row['serial#'] ?> rows="3" class=" form-control sField" value = "<?php echo $row['skill'] ?>"></input>
-          <?php if($row['serial#']=== 'tech3'){ ?> <br><br> <?php } ?>
+          <input type="text" id=<?php echo $row['serial#'] ?> rows="3" class=" form-control sField" value = " <?php echo $row['skill'] ?>"></input>
+          <?php if($row['serial#']=== 'tech3'){ ?> <br> <?php } ?>
           <?php }
             }     
           ?>
@@ -109,15 +109,15 @@ $username = $_SESSION['username'];
           ?>
             <input type="text" id="Ntech1" placeholder=" Skill 1" rows="3" class=" form-control sField"></input>
             <input type="text" id="Ntech2" placeholder=" Skill 2" rows="3" class=" form-control sField"></input>
-            <input type="text" id="Ntech3" placeholder=" Skill 3" rows="3" class=" form-control sField"></input><br><br>
+            <input type="text" id="Ntech3" placeholder=" Skill 3" rows="3" class=" form-control sField"></input><br>
             <input type="text" id="Ntech4" placeholder=" Skill 4" rows="3" class=" form-control sField"></input>
             <input type="text" id="Ntech5" placeholder=" Skill 5" rows="3" class=" form-control sField"></input>
           <?php }else{ 
                 foreach ($rows as $row) {
           ?>
             
-          <input type="text" id=<?php echo $row['serial#'] ?> rows="3" class=" form-control sField" value = "<?php echo $row['skill'] ?>"></input>
-          <?php if($row['serial#']=== 'Ntech3'){ ?> <br><br> <?php } ?>
+          <input type="text" id=<?php echo $row['serial#'] ?> rows="3" class=" form-control sField" value = " <?php echo $row['skill'] ?>"></input>
+          <?php if($row['serial#']=== 'Ntech3'){ ?> <br> <?php } ?>
           <?php }
             }     
           ?>
@@ -141,19 +141,19 @@ $username = $_SESSION['username'];
 
             <h3> Project 1 </h3>
             <label for="">Project Name</label><br>
-            <input type="text" id="pron1" placeholder=" Enter here" rows="3" ></input><br><br>
+            <input type="text" id="pron1" placeholder=" Enter here" rows="3" style="width: 60%;"></input><br><br>
             <label for="" >Project description</label><br>
             <textarea id="prod1" type="text" placeholder=" Enter here" rows="3" ></textarea><br>
             <label for="">Project Link</label><br>
-            <input type="text" id="prol1" placeholder=" Enter here" rows="3" ></input><br>
+            <input type="text" id="prol1" placeholder=" Enter here" rows="3" style="width: 60%;"></input><br>
 
             <h3> Project 2 </h3>
             <label for="">Project Name</label><br>
-            <input type="text" id="pron2" placeholder=" Enter here" rows="3" ></input><br><br>
+            <input type="text" id="pron2" placeholder=" Enter here" rows="3" style="width: 60%;"></input><br><br>
             <label for="" >Project description</label><br>
             <textarea id="prod2" type="text" placeholder=" Enter here" rows="3" ></textarea><br>
             <label for="">Project Link</label><br>
-<input type="text" id="prol2" placeholder=" Enter here" rows="3" ></input><br>
+            <input type="text" id="prol2" placeholder=" Enter here" rows="3" style="width: 60%;"></input><br>
 
 
           <?php }else{ 
@@ -162,11 +162,11 @@ $username = $_SESSION['username'];
 
             <h3> Project <?php echo $row['serial#'] ?> </h3>
             <label for="">Project Name</label><br>
-            <input type="text" id="pron<?php echo $row['serial#'] ?>" rows="3" value="<?php echo $row['pron'] ?>"></input><br><br>
+            <input type="text" id="pron<?php echo $row['serial#'] ?>" rows="3" style="width: 60%;" value=" <?php echo $row['pron'] ?>"></input><br><br>
             <label for="" >Project description</label><br>
             <textarea id="prod<?php echo $row['serial#'] ?>" type="text" placeholder=" Enter here" rows="3" ><?php echo $row['prod'] ?></textarea><br>
             <label for="">Project Link</label><br>
-            <input type="text" id="prol<?php echo $row['serial#'] ?>" value="<?php echo $row['pron'] ?>" rows="3" ></input><br>          
+            <input type="text" id="prol<?php echo $row['serial#'] ?>" value=" <?php echo $row['pron'] ?>" rows="3" style="width: 60%;"></input><br>          
 
           <?php 
            }
@@ -180,7 +180,7 @@ $username = $_SESSION['username'];
 
         </div>
       
-        <p style="color:red;" id="saved" ></p>
+        <p style="color:green;" id="saved" ></p>
 
         <input
           type="submit"

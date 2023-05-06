@@ -62,9 +62,12 @@ $username = $_SESSION['username'];
         <div class="card">
           <div class="card-body">
             <div class="e-profile">
+
               <div class="row">
                 <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px;">
+                <h3> Edit Profile </h3>       
+
+                  <!--div class="mx-auto" style="width: 140px;">
                     <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
                       <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
                     </div>
@@ -79,9 +82,10 @@ $username = $_SESSION['username'];
                         <span>Change Photo</span>
                       </button>
                     </div>
-                  </div>
+                  </div-->
                 </div>
               </div>
+
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
 

@@ -95,7 +95,7 @@ $result = $conn->query($sql);
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
 
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                        <img src="../../img/userprofile.avif" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
 <?php
 $sql = "SELECT * FROM logindetails WHERE username = '$username'";
@@ -143,6 +143,7 @@ $rowflag = mysqli_fetch_assoc($resultflag);
                     </ul>
                   </div>
                 </div>
+
                 <div class="col-md-8">
                   <div class="card mb-3">
                     <div class="card-body">
